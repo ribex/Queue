@@ -10,6 +10,13 @@ namespace Queue
     {
         static void Main(string[] args)
         {
+            var testQueue = new Queue(10);
+
+            var nameQueue = new Queue(5, "A", "B", "C");
+
+            Console.WriteLine(testQueue);
+
+            Console.WriteLine(nameQueue);
         }
     }
 }
