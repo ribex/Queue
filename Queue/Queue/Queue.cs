@@ -5,6 +5,9 @@ namespace Queue
     // First In First Out
     public class Queue
     {
+        // could use List instead of Array
+
+
         private Array[] _queueMembers;
 
         public Queue()
@@ -24,6 +27,7 @@ namespace Queue
             _queueMembers = new Array[size];
             for (int i = 0; i < names.Length; i++)
             {
+                // todo: hmm
                 _queueMembers[i] = names[i];
             }
         }
@@ -39,6 +43,9 @@ namespace Queue
         // Add items to end
         public void Add()
         {
+            // check IsFull
+            // if full, recopy array to new array + 1
+
             //items[tail] = items
             //tail++
         }
