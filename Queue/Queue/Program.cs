@@ -17,6 +17,14 @@ namespace Queue
             Console.WriteLine(testQueue);
 
             Console.WriteLine(nameQueue);
+
+            nameQueue.Add("D");
+
+            Console.WriteLine(nameQueue);
+
+            var removeFirst = nameQueue.Remove();
+
+            Console.WriteLine(nameQueue);
         }
     }
 }

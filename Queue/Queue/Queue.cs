@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Queue
 {
@@ -8,7 +9,7 @@ namespace Queue
         // could use List instead of Array
 
 
-        private Array[] _queueMembers;
+        private List<string> _queueMembers;
 
         public Queue()
         {
@@ -18,40 +19,42 @@ namespace Queue
         // define the size of the queue upon creation
         public Queue(int size)
         {
-            _queueMembers = new Array[size];
+            _queueMembers = new List<string>(size);
         }
 
         // define the size of the queue and its initial members upon creation
         public Queue(int size, params string[] names)
         {
-            _queueMembers = new Array[size];
-            for (int i = 0; i < names.Length; i++)
+            _queueMembers = new List<string>(size);
+            foreach (var name in names)
             {
-                // todo: hmm
-                _queueMembers[i] = names[i];
+                _queueMembers.Add(name);
             }
         }
 
-        public string Name { get; set; }
-        public Int16 Length { get; set; }
+        public string QueueName { get; set; }
+        public Int16 MaxSize { get; set; }
 
-        public void Initialize()
+        public int tail { get; set; }
+
+        public void Initialize(int tail)
         {
-            // tail = 0
+            tail = 0;
         }
 
         // Add items to end
-        public void Add()
+        public void Add(string item)
         {
             // check IsFull
             // if full, recopy array to new array + 1
 
             //items[tail] = items
+
             //tail++
         }
 
         // Remove items from beginning
-        public void Remove()
+        public string Remove()
         {
             // Must always remove from the beginning of the queue
 
@@ -59,7 +62,7 @@ namespace Queue
             //for (i = 0; i < tail - 1; i++)
             //    items[i] = items[i + 1]
             //tail--
-            //return itemtoreturn;
+            return item;
 
         }
 
@@ -73,7 +76,7 @@ namespace Queue
         public bool IsEmpty()
         {
             // if (tail <= 0) return true, else return false
-            return true;
+            return false;
         }
     }
 }
